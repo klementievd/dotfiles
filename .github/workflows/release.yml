@@ -1,9 +1,9 @@
 name: Build Release
 
 on:
-  push:
-    branches:
-      - dev
+  # push:
+  #   branches:
+  #     - dev
 
   schedule:
     # build every day
