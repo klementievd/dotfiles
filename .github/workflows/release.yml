@@ -25,7 +25,7 @@ jobs:
       - name: Build ISO
         run: |
           # Build the image
-          image=$(guix time-machine -C './channels.scm' -- system image './disk-image.scm')
+          image=$(guix time-machine -C './channels.scm' -- system -L "./scheme" image './disk-image.scm' --substitute-urls='https://ci.guix.gnu.org https://bordeaux.guix.gnu.org https://substitutes.nonguix.org')
 
           # Copy the image to the local folder with a better name
           export RELEASE_TAG=$(date +"%Y%m%d%H%M")
