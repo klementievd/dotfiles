@@ -1,0 +1,69 @@
+#+title: Dotfiles
+#+author: Klementiev Dmitry
+
+* A little about my system
+
+I have a lot of Emacs :smile:
+
+| Package Manager/Distribution | Guix/GuixSD             |
+| Window Manager               | Emacs (EXWM)            |
+| Application launcher         | Emacs (kd/app-launcher) |
+| Code editor                  | Emacs                   |
+| Terminal Emulator            | Emacs (vterm or eshell) |
+
+** My Emacs
+
+It is a little slow configuration. I trying to optimize this config.
+
+I have a little features in my Emacs:
+- Torrent client
+- Application launcher
+- Window Manager
+- LSP
+  - =lsp-mode=
+  - =lsp-ui=
+  - =lsp-treemacs=
+- Completion (company/vertico/consult)
+- Doom Modeline
+- A lot of languages
+  - Rust
+  - C/C++
+  - CMake
+  - Toml
+  - Python
+  - Zig
+    
+*** Keybindings
+
+| =eval-buffer (user-init-directory)= | =C-c r=            | Reload Emacs             |
+| =kd/app-launcher=                   | =C-c SPC=          | Run application launcher |
+| =consult-grep= or =consult-rigrep=  | =SPC g=            | Finding a buffer         |
+| =consult-buffer=                    | =SPC b= or =C-M-j= | Switch to buffer         |
+| =consult-imenu=                     | =SPC i=            | Go to item               |
+| =consult-line=                      | =SPC s= or =C-s=   | Go to line               |
+| =consult-theme=                     | =SPC t t=          | Choose theme             |
+| =hydra-text-scale/body=             | =SPC t s=          | Scale text               |
+
+*** TODO I will do it in future
+
+- [ ] A lot of keybindings for =evil-mode= with =general=, =hydra= and =which-key=
+  - [ ] LSP actions in =SPC l=
+  - [ ] =consult-grep= or =consult-ripgrep= in =SPC g=
+  - [ ] =consult-buffer= in =SPC b=
+  - [ ] =consult-imenu= in =SPC i=
+  - [ ] =consult-flymake= in =SPC f m=
+- [ ] Debugging with =dap-mode=
+
+* Scheme code
+
+Main Scheme source files:
+- qemu-image.scm - VM image for qemu
+
+Other code files in =scheme/=. Load path is appended
+in =GNUmakefile= as =guix= options in variable (=${OPTIONS}=)
+
+* Channels and repos
+
+Current versions (commits/tags):
+| Guix    | c4b9f726e3a1889b92a4b14a2af1c25f10798469 |
+| Nonguix | 454aa47bee3c841c5b6f7bc0bc71ed7a65d91d38 |
