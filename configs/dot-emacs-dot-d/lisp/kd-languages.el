@@ -37,3 +37,9 @@
 (use-package toml-mode
   :ensure nil
   :mode "\\.toml\\'")
+
+;;; Yaml:
+(use-package yaml-mode
+  :ensure nil
+  :mode ("\\.yaml\\'"
+	 "\\.yml\\'"))

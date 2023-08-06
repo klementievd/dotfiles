@@ -53,6 +53,7 @@
       ("emacs-rust-mode" ,emacs-rust-mode)
       ("emacs-cmake-mode" ,emacs-cmake-mode)
       ("emacs-toml-mode" ,emacs-toml-mode)
+      ("emacs-yaml-mode" ,emacs-yaml-mode)
       
       ("emacs-mentor" ,emacs-mentor)
 
