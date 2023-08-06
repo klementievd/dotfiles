@@ -25,7 +25,7 @@ home:
 
 # Make system disk-image
 disk-image:
-	image=(${GUIX} system ${OPTIONS} image qemu-image.scm
+	${GUIX} system ${OPTIONS} image disk-image.scm
 
 ################### Copying things ######################
 

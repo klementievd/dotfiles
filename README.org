@@ -57,7 +57,7 @@ I have a little features in my Emacs:
 * Scheme code
 
 Main Scheme source files:
-- =qemu-image.scm= - VM image for qemu
+- =disk-image.scm= - Disk image
 - =home.scm= - Home environment
 
 Other code files in =scheme/=. Load path is appended
