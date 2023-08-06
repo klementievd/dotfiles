@@ -23,9 +23,9 @@ init:
 home:
 	${GUIX} home ${OPTIONS} reconfigure home.scm ${SUBSTITUTES}
 
-# Make system image
-image:
-	${GUIX} system ${OPTIONS} image qemu-image.scm
+# Make system disk-image
+disk-image:
+	image=(${GUIX} system ${OPTIONS} image qemu-image.scm
 
 ################### Copying things ######################
 

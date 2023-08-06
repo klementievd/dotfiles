@@ -9,6 +9,7 @@
 (use-modules (gnu home)
 
 	     ;; Packages
+
 	     (my-packages kdmacs)
 	     (my-packages firefox-bin)
 
