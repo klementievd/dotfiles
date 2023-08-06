@@ -57,10 +57,11 @@ I have a little features in my Emacs:
 * Scheme code
 
 Main Scheme source files:
-- qemu-image.scm - VM image for qemu
+- =qemu-image.scm= - VM image for qemu
+- =home.scm= - Home environment
 
 Other code files in =scheme/=. Load path is appended
-in =GNUmakefile= as =guix= options in variable (=${OPTIONS}=)
+in =GNUmakefile= as =guix= options in =${OPTIONS}= variable
 
 * Channels and repos
 
