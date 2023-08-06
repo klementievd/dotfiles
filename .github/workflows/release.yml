@@ -1,0 +1,50 @@
+name: Build Release
+
+on:
+  push:
+    branches:
+      - master
+
+  schedule:
+    # build every day
+    - cron: "0 0 */1 * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Install Guix
+        uses: PromyLOPh/guix-install-action@v1
+
+      - name: Build ISO
+        run: |
+          # Build the image
+          image=$(guix time-machine -C './channels.scm' -- system image './disk-image.scm')
+
+          # Copy the image to the local folder with a better name
+          export RELEASE_TAG=$(date +"%Y%m%d%H%M")
+          echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_ENV
+          cp $image ./guix-disk-image-$RELEASE_TAG.iso
+
+      - name: Prepare Release Notes
+        run: |
+          echo $'This installer image was prepared with the following channel configuration:\r\n\r\n```\r\n' > release-notes.md
+          cat ./channels.scm >> release-notes.md
+          echo $'\r\n```' >> release-notes.md
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Guix Disk Image - ${{ env.RELEASE_TAG }}
+          tag_name: v${{ env.RELEASE_TAG }}
+          body_path: release-notes.md
+          files: guix-disk-image-${{ env.RELEASE_TAG }}.iso
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: klementievd/dotfiles
