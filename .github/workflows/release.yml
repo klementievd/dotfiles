@@ -3,7 +3,7 @@ name: Build Release
 on:
   push:
     branches:
-      - master
+      - dev
 
   schedule:
     # build every day
