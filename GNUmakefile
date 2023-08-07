@@ -1,5 +1,12 @@
 # -*- mode: makefile; -*-
 
+##########################
+# I use GNUmakefile
+# for short commands
+# like `make home' or
+# `make disk-image'
+##########################
+
 # Default root variable
 ROOT=/mnt
 
@@ -25,17 +32,24 @@ home:
 
 # Make system disk-image
 disk-image:
-	${GUIX} system ${OPTIONS} image disk-image.scm
+	image=$$(${GUIX} system ${OPTIONS} image disk-image.scm ${SUBSTITUTES})
+
+################### Github actions ######################
+
+github-actions/disk-image: disk-image
+	export RELEASE_TAG=$$(date + "%Y%m%d%H%M")
+	echo "RELEASE_TAG=$$RELEASE_TAG" >> $$GITHUB_ENV
+	cp $$image guix-installer-$$RELEASE_TAG.iso
 
 ################### Copying things ######################
 
 about:
 	@echo "dotfiles  Copyright (C) 2023 Klementiev Dmitry"
-	@echo "This program comes with ABSOLUTELY NO WARRANTY; for details type \`warranty'."
+	@echo "This program comes with ABSOLUTELY NO WARRANTY; for details type \`show-w'."
 	@echo "This is free software, and you are welcome to redistribute it"
-	@echo "under certain conditions; type \`copying' for details."
+	@echo "under certain conditions; type \`make show-c' for details."
 
-warranty:
+show-w:
 	@echo "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY"
 	@echo "APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT"
 	@echo "HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM \"AS IS\" WITHOUT WARRANTY"
@@ -45,5 +59,5 @@ warranty:
 	@echo "IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF"
 	@echo "ALL NECESSARY SERVICING, REPAIR OR CORRECTION."
 
-copying:
+show-c:
 	@sed -n 71,621p COPYING

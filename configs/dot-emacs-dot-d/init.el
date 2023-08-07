@@ -77,6 +77,9 @@
   (kd/load-lisp-file "kd-languages.el")   ; All specific languages configurations
   (kd/load-lisp-file "kd-keybindings.el") ; Keybindings with general, which-key and hydra
 
+  ;; Messaging
+  (kd/load-lisp-file "kd-telega.el")
+
   ;; KDMacs built-in packages:
   ;;
   ;; - Application launcher

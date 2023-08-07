@@ -43,3 +43,15 @@
   :ensure nil
   :mode ("\\.yaml\\'"
 	 "\\.yml\\'"))
+
+;;; Python:
+(use-package python-mode
+  :ensure nil
+  :mode ("\\.py\\'")
+  :hook (python-mode . lsp-deferred))
+
+;;; Zig:
+(use-package zig-mode
+  :ensure nil
+  :mode ("\\.zig\\'")
+  :hook (zig-mode . lsp-deferred))

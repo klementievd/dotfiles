@@ -59,24 +59,7 @@
   :ensure nil
   :after evil
   :config
-  (with-eval-after-load 'org
-    (evil-collection-init 'org))
-  (with-eval-after-load 'dired
-    (evil-collection-init 'dired))
-  (with-eval-after-load 'calendar
-    (evil-collection-init 'calendar))
-  (with-eval-after-load 'magit
-    (evil-collection-init 'magit))
-  (with-eval-after-load 'company
-    (evil-collection-init 'company))
-
-  ;; GNU Emacs built-in games
-  (with-eval-after-load '5x5
-    (evil-collection-init '5x5))
-  (with-eval-after-load 'tetris
-    (evil-collection-init 'tetris))
-  (with-eval-after-load 'snake
-    (evil-collection-init 'snake)))
+  (evil-collection-init))
 
 (use-package vertico
   :ensure nil

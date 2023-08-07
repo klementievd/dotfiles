@@ -1,4 +1,4 @@
-#+title: Dotfiles
+#+title: dotfiles
 #+author: Klementiev Dmitry
 
 * A little about my system
@@ -10,12 +10,14 @@ I have a lot of Emacs :smile:
 | *Application launcher*         | Emacs (kd/app-launcher) |
 | *Code editor*                  | Emacs                   |
 | *Terminal Emulator*            | Emacs (vterm or eshell) |
+| *Telegram Client*              | Emacs (telega.el)       |
 
 ** My Emacs
 
 It is a little slow configuration. I trying to optimize this config.
 
 I have a little features in my Emacs:
+- Telegram client
 - Torrent client
 - Application launcher
 - Window Manager
@@ -30,10 +32,13 @@ I have a little features in my Emacs:
   - C/C++
   - CMake
   - Toml
+  - Yaml
   - Python
   - Zig
     
 *** Keybindings
+
+These are keybindings created only by me manually.
 
 | =eval-buffer (user-init-directory)= | =C-c r=            | Reload Emacs             |
 | =kd/app-launcher=                   | =C-c SPC=          | Run application launcher |
@@ -46,13 +51,18 @@ I have a little features in my Emacs:
 
 *** TODO I will do it in future
 
-- [ ] A lot of keybindings for =evil-mode= with =general=, =hydra= and =which-key=
+- [-] A lot of keybindings for =evil-mode= with =general=, =hydra= and =which-key=
   - [ ] LSP actions in =SPC l=
-  - [ ] =consult-grep= or =consult-ripgrep= in =SPC g=
-  - [ ] =consult-buffer= in =SPC b=
-  - [ ] =consult-imenu= in =SPC i=
-  - [ ] =consult-flymake= in =SPC f m=
+  - [X] =consult-grep= or =consult-ripgrep= in =SPC g=
+  - [X] =consult-buffer= in =SPC b=
+  - [X] =consult-imenu= in =SPC i=
+  - [X] =consult-line= in =SPC s=
+  - [X] =consult-theme= in =SPC t t=
+  - [X] =hydra-text-scale/body= in =SPC t s=
 - [ ] Debugging with =dap-mode=
+- [ ] Telegram client (telega.el) configuration
+  - [ ] Vertico completion with =telega-*= commands
+  - [ ] Use =SPC m t= as =telega.el= prefix
 
 * Scheme code
 
@@ -68,3 +78,36 @@ in =GNUmakefile= as =guix= options in =${OPTIONS}= variable
 Current versions (commits/tags):
 | Guix    | c4b9f726e3a1889b92a4b14a2af1c25f10798469 |
 | Nonguix | 454aa47bee3c841c5b6f7bc0bc71ed7a65d91d38 |
+
+* CI/CD
+
+** Github actions
+
+*** release.yml
+
+Generate release with these things:
+- [X] Disk image
+- [ ] ISO installer
+- [ ] QCOW2 for qemu
+
+**** TODO This workflow don't use GNUmakefile
+
+It's just run all commands in yaml file. But I should
+rewrite GNUmakefile for CI/CD support. I need to rewrite
+=disk-image= task and write a new =github-actions-release=
+may be. This is just my idea how I can implement this.
+
+
+
+*** TODO my-packages.yml
+
+Run next things:
+- [ ] =make test-my-packages=
+
+  
+*** TODO dev-check.yml
+
+Run on push to dev branch.
+Run next things:
+- [ ] =make home=
+- [ ] =make disk-image=

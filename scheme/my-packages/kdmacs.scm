@@ -19,6 +19,9 @@
       ("lighttpd" ,lighttpd)
       ("rtorrent" ,rtorrent)
 
+      ("emacs-telega" ,emacs-telega) ; Telegram client
+      ("emacs-ement" ,emacs-ement) ; Matrix client
+
       ("emacs-use-package" ,emacs-use-package)
 
       ("emacs-evil" ,emacs-evil)
@@ -48,14 +51,14 @@
       ("emacs-all-the-icons" ,emacs-all-the-icons)
       ("emacs-doom-modeline" ,emacs-doom-modeline)
 
-      ("emacs-on" ,emacs-on)
+      ("emacs-on" ,emacs-on) ; Hooks for speedup
 
       ("emacs-rust-mode" ,emacs-rust-mode)
       ("emacs-cmake-mode" ,emacs-cmake-mode)
       ("emacs-toml-mode" ,emacs-toml-mode)
       ("emacs-yaml-mode" ,emacs-yaml-mode)
       
-      ("emacs-mentor" ,emacs-mentor)
+      ("emacs-mentor" ,emacs-mentor) ; Rtorrent client
 
       ("emacs-doom-themes" ,emacs-doom-themes)))
    (replacement emacs)))

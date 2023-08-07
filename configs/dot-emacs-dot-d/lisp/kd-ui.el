@@ -31,7 +31,25 @@
 	   treemacs-mode
 	   dired-mode
 	   vterm-mode
-	   eshell-mode) . (lambda () (display-line-numbers-mode 0)))
+	   eshell-mode
+	   telega-root-mode
+	   telega-chat-mode
+	   telega-image-mode
+	   telega-patrons-mode
+	   telega-webpage-mode
+	   telega-autoplay-mode
+	   telega-edit-file-mode
+	   telega-mode-line-mode
+	   telega-my-location-mode
+	   telega-voip-sounds-mode
+	   telega-appindicator-mode
+	   telega-notifications-mode
+	   telega-auto-translate-mode
+	   telega-highlight-text-mode
+	   telega-root-auto-fill-mode
+	   telega-squash-message-mode
+	   telega-active-locations-mode
+	   telega-recognize-voice-message-mode) . (lambda () (display-line-numbers-mode 0)))
 	 
 	 ;; Hide mode line
 	 ((term-mode
@@ -70,7 +88,8 @@
   ;; Good themes:
   ;; * doom-peacock
   ;; * doom-solarized-dark
-  (load-theme 'doom-peacock t))
+  ;; * doom-dark+
+  (load-theme 'doom-dark+ t))
 
 ;; Icons
 (use-package all-the-icons
