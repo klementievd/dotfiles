@@ -6,7 +6,7 @@
 
 ;; Load my scheme configuration files
 (use-modules (gnu image)
-	     (my-default-os)
+	     (my-systems base)
 	     (gnu system image)
 	     (guix gexp)
 	     (ice-9 match))
@@ -58,7 +58,7 @@
 
 (image
  (inherit efi-disk-image)
- (operating-system my-default-os)
+ (operating-system my/base-system)
  (partitions
   (match (image-partitions efi-disk-image)
     ((esp root)

@@ -11,7 +11,7 @@
 ;; 
 ;;; Code:
 
-(define-module (my-default-os)
+(define-module (my-systems base)
   ;; Base
   #:use-module (gnu)
   
@@ -36,7 +36,10 @@
   #:use-module (gnu services networking)
   #:use-module (gnu services xorg))
 
-(define-public my-default-os
+;; All other operating systems is based on it.
+;; Don't create new operating system. You
+;; should use it as base system
+(define-public my/base-system
   (operating-system
    ;; Kernel setup
    (kernel linux)

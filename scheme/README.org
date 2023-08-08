@@ -1,0 +1,20 @@
+* About
+
+This is place for scheme source code. It contains a operating systems,
+services and packages.
+
+A little about naming. If I have a name collision then I just use =my/= prefix.
+
+I always use =my/= prefix in system names. (ex. =my/base-system=)
+
+* My Packages
+
+Contain packages. Has a =non-free/= prefix if package is non-free.
+
+* My Services
+
+My services.
+
+* My Systems
+
+My systems.

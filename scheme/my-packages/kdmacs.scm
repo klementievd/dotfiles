@@ -47,6 +47,7 @@
       ("emacs-general" ,emacs-general)
       ("emacs-hydra" ,emacs-hydra)
       ("emacs-which-key" ,emacs-which-key)
+      ("emacs-helpful" ,emacs-helpful)
 
       ("emacs-all-the-icons" ,emacs-all-the-icons)
       ("emacs-doom-modeline" ,emacs-doom-modeline)

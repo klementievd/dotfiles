@@ -78,36 +78,3 @@ in =GNUmakefile= as =guix= options in =${OPTIONS}= variable
 Current versions (commits/tags):
 | Guix    | c4b9f726e3a1889b92a4b14a2af1c25f10798469 |
 | Nonguix | 454aa47bee3c841c5b6f7bc0bc71ed7a65d91d38 |
-
-* CI/CD
-
-** Github actions
-
-*** release.yml
-
-Generate release with these things:
-- [X] Disk image
-- [ ] ISO installer
-- [ ] QCOW2 for qemu
-
-**** TODO This workflow don't use GNUmakefile
-
-It's just run all commands in yaml file. But I should
-rewrite GNUmakefile for CI/CD support. I need to rewrite
-=disk-image= task and write a new =github-actions-release=
-may be. This is just my idea how I can implement this.
-
-
-
-*** TODO my-packages.yml
-
-Run next things:
-- [ ] =make test-my-packages=
-
-  
-*** TODO dev-check.yml
-
-Run on push to dev branch.
-Run next things:
-- [ ] =make home=
-- [ ] =make disk-image=

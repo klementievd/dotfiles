@@ -32,14 +32,7 @@ home:
 
 # Make system disk-image
 disk-image:
-	image=$$(${GUIX} system ${OPTIONS} image disk-image.scm ${SUBSTITUTES})
-
-################### Github actions ######################
-
-github-actions/disk-image: disk-image
-	export RELEASE_TAG=$$(date + "%Y%m%d%H%M")
-	echo "RELEASE_TAG=$$RELEASE_TAG" >> $$GITHUB_ENV
-	cp $$image guix-installer-$$RELEASE_TAG.iso
+	${GUIX} system ${OPTIONS} image disk-image.scm ${SUBSTITUTES}
 
 ################### Copying things ######################
 
