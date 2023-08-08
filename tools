@@ -1,0 +1,45 @@
+#!/usr/bin/env -S guile2.2 --no-auto-compile
+!#
+;; -*- mode: scheme; -*-
+
+;;; Comment:
+;;
+;; I think writing in Guile (Scheme) is good way
+;; to learn this language. I really love this syntax.
+;; It is so powerfull language. And I learning it
+;; when writing this tooling script.
+;;
+;;; Code:
+
+;; Check first command line argument
+(define (arg? arg) (string= (list-ref (command-line) 1) arg))
+
+;; Custom Guix command.
+;; 1. Specify channels
+;; 2. Specify load path
+;; 3. Specify substitute urls
+(define (guix args)
+  (system
+   (string-append
+    "guix "
+    "time-machine "
+    "-C "
+    "channels.scm "
+    "-- "
+    (car args)
+    " -L ./scheme "
+    (string-join
+     (cdr args)
+     " ")
+    (string-append
+     " --substitute-urls="
+     "\""
+     "https://bordeaux.guix.gnu.org "
+     "https://substitutes.nonguix.org"
+     "\""))))
+
+(when (> (length (command-line)) 1)
+  (cond ((arg? "home")
+	 (guix '("home"
+		 "reconfigure"
+		 "home.scm")))))
