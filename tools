@@ -53,7 +53,7 @@
 	     (guix '("home"
 		     "reconfigure"
 		     "home.scm")))
-	    ((arg? "--help")
+	    ((arg? "help")
 	     (display
 	      (string-append
 	       "\t--main-substitute   Use `https://ci.guix.gnu.org' substitute\n")))
