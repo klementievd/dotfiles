@@ -1,5 +1,8 @@
 name: Build Release
 
+permissions:
+  contents: write
+
 on:
   # push:
   #   branches:
@@ -23,14 +26,7 @@ jobs:
         uses: PromyLOPh/guix-install-action@v1
 
       - name: Build ISO
-        run: |
-          # Build the image
-          image=$(guix time-machine -C './channels.scm' -- system -L "./scheme" image './disk-image.scm' --substitute-urls='https://ci.guix.gnu.org https://bordeaux.guix.gnu.org https://substitutes.nonguix.org')
-
-          # Copy the image to the local folder with a better name
-          export RELEASE_TAG=$(date +"%Y%m%d%H%M")
-          echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_ENV
-          cp $image ./guix-disk-image-$RELEASE_TAG.iso
+        run: make github-actions/disk-image
 
       - name: Prepare Release Notes
         run: |
@@ -44,7 +40,7 @@ jobs:
           name: Guix Disk Image - ${{ env.RELEASE_TAG }}
           tag_name: v${{ env.RELEASE_TAG }}
           body_path: release-notes.md
-          files: guix-disk-image-${{ env.RELEASE_TAG }}.iso
+          files: guix-disk-image-${{ env.RELEASE_TAG }}.img
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: klementievd/dotfiles
