@@ -38,8 +38,11 @@
      "https://substitutes.nonguix.org"
      "\""))))
 
-(when (> (length (command-line)) 1)
+(if (> (length (command-line)) 1)
   (cond ((arg? "home")
 	 (guix '("home"
 		 "reconfigure"
-		 "home.scm")))))
+		 "home.scm")))
+	(else
+	 (display (string-append "Undefined argument: `" (list-ref (command-line) 1) "'\n"))))
+  (display "`tools' require arguments\n"))
