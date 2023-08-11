@@ -89,7 +89,8 @@
   ;; * doom-peacock
   ;; * doom-solarized-dark
   ;; * doom-dark+
-  (load-theme 'doom-dark+ t))
+  ;; * doom-molokai
+  (load-theme 'doom-molokai t))
 
 ;; Icons
 (use-package all-the-icons
