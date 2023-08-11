@@ -27,3 +27,6 @@
 
 (use-package lsp-treemacs
   :after lsp)
+
+(use-package eglot
+  :ensure nil)

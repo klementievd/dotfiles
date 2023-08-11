@@ -20,10 +20,7 @@ I have a little features in my Emacs:
 - Torrent client
 - Application launcher
 - Window Manager
-- LSP
-  - =lsp-mode=
-  - =lsp-ui=
-  - =lsp-treemacs=
+- LSP =eglot=
 - Completion (company/vertico/consult)
 - Doom Modeline
 - A lot of languages
