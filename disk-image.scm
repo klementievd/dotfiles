@@ -3,7 +3,6 @@
 ;; TODO
 ;;
 ;;; Code:
-
 ;; Load my scheme configuration files
 (use-modules (gnu image)
 	     (my-systems base)
