@@ -174,3 +174,22 @@
 (use-package hydra
   :ensure nil
   :defer t)
+
+(use-package guix
+  :ensure nil
+  :commands (guix))
+
+(use-package neotree
+  :ensure nil
+  :commands (neotree-toggle)
+  :custom
+  ;; Values:
+  ;; * classic - with icons
+  ;; * ascii - only ASCII symbols
+  ;; * arrow - use unicode symbols
+  ;; * nerd - use nerdtree identation mode and arrow
+  (neo-theme 'ascii))
+
+(use-package magit
+  :ensure nil
+  :defer t)

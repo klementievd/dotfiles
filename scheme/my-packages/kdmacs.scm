@@ -15,10 +15,15 @@
    (propagated-inputs
     `(("font-abattis-cantarell" ,font-abattis-cantarell)
       ("font-fira-code" ,font-fira-code)
-
+      ("emacs-all-the-icons" ,emacs-all-the-icons)
+      
       ("lighttpd" ,lighttpd)
       ("rtorrent" ,rtorrent)
 
+      ("emacs-neotree" ,emacs-neotree) ; Folder tree view for Emacs
+
+      ("emacs-guix" ,emacs-guix) ; Emacs Guix integration
+      
       ("emacs-telega" ,emacs-telega) ; Telegram client
       ("emacs-ement" ,emacs-ement) ; Matrix client
 
