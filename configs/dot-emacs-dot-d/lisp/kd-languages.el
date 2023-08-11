@@ -14,7 +14,7 @@
 
 (use-package rust-mode
   :ensure nil
-  :hook (rust-mode . lsp-deferred)
+  :hook (rust-mode . eglot-ensure)
   :custom
   (lsp-eldoc-hook nil)
   (lsp-enable-symbol-highlighting nil)
@@ -22,16 +22,16 @@
   (rust-format-on-save t))
 
 ;;; C/C++:
-(add-hook 'c-mode-hook 'lsp-deferred)
-(add-hook 'c++-mode-hook 'lsp-deferred)
-(add-hook 'c-or-c++-mode 'lsp-deferred)
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c++-mode-hook 'eglot-ensure)
+(add-hook 'c-or-c++-mode 'eglot-ensure)
 
 ;;; CMake:
 (use-package cmake-mode
   :ensure nil
   :mode ("CMakeLists.txt\\'"
 	 "\\.cmake\\'")
-  :hook (cmake-mode . lsp-deferred))
+  :hook (cmake-mode . eglot-ensure))
 
 ;;; Toml:
 (use-package toml-mode
@@ -48,10 +48,18 @@
 (use-package python-mode
   :ensure nil
   :mode ("\\.py\\'")
-  :hook (python-mode . lsp-deferred))
+  :hook (python-mode . eglot-ensure))
 
 ;;; Zig:
 (use-package zig-mode
   :ensure nil
   :mode ("\\.zig\\'")
-  :hook (zig-mode . lsp-deferred))
+  :hook (zig-mode . eglot-ensure))
+
+;;; GDScript:
+(use-package gdscript-mode
+  :ensure nil
+  :hook (gdscript-mode . eglot-ensure)
+  :mode "\\.gd\\'"
+  :custom
+  (gdscript-eglot-version 4))

@@ -40,11 +40,12 @@
 
       ("emacs-rainbow-delimiters" ,emacs-rainbow-delimiters)
 
-      ("emacs-lsp-mode" ,emacs-lsp-mode)
+      ;; ("emacs-lsp-mode" ,emacs-lsp-mode)
+      ;; ("emacs-lsp-ui" ,emacs-lsp-ui)
+      ;; ("emacs-lsp-treemacs" ,emacs-lsp-treemacs)
+      ("emacs-eglot" ,emacs-eglot)
       ("emacs-company" ,emacs-company)
       ("emacs-company-box" ,emacs-company-box)
-      ("emacs-lsp-ui" ,emacs-lsp-ui)
-      ("emacs-lsp-treemacs" ,emacs-lsp-treemacs)
 
       ("emacs-consult" ,emacs-consult)
       ("emacs-vertico" ,emacs-vertico)
@@ -63,6 +64,7 @@
       ("emacs-cmake-mode" ,emacs-cmake-mode)
       ("emacs-toml-mode" ,emacs-toml-mode)
       ("emacs-yaml-mode" ,emacs-yaml-mode)
+      ("emacs-gdscript-mode" ,emacs-gdscript-mode)
       
       ("emacs-mentor" ,emacs-mentor) ; Rtorrent client
 
