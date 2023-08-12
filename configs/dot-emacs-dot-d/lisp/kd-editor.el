@@ -33,7 +33,10 @@
 	      ;; "C-g" == "Esc"
 	      ("C-g" . evil-normal-state)
 	      ;; "C-h" == "Backspace"
-	      ("C-h" . evil-delete-backward-char-and-join))
+	      ("C-h" . evil-delete-backward-char-and-join)
+	      :map evil-normal-state-map
+	      ("+" . text-scale-increase)
+	      ("-" . text-scale-decrease))
   :init
   (evil-mode 1)
   :config
