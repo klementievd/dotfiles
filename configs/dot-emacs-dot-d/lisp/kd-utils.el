@@ -197,8 +197,8 @@
 
 (defun kd/keep-only-normal-evil-state (mode)
   "Keep only `normal' evil state in MODE"
-  (evil-define-key 'normal mode (kbd "i") (lambda () (interactive) (message "Hello, Evil Emacs!")))
-  (evil-define-key 'normal mode (kbd "v") (lambda () (interactive) (message "Hello, Evil Emacs!")))
-  (evil-define-key 'normal mode (kbd "C-v") (lambda () (interactive) (message "Hello, Evil Emacs!")))
-  (evil-define-key 'normal mode (kbd "C-V") (lambda () (interactive) (message "Hello, Evil Emacs!")))
-  (evil-define-key 'normal mode (kbd "V") (lambda () (interactive) (message "Hello, Evil Emacs!"))))
+  (evil-define-key 'normal mode (kbd "i") (lambda () (interactive) (message "This mode keeps only `normal' evil-state")))
+  (evil-define-key 'normal mode (kbd "v") (lambda () (interactive) (message "This mode keeps only `normal' evil-state")))
+  (evil-define-key 'normal mode (kbd "C-v") (lambda () (interactive) (message "This mode keeps only `normal' evil-state")))
+  (evil-define-key 'normal mode (kbd "C-V") (lambda () (interactive) (message "This mode keeps only `normal' evil-state")))
+  (evil-define-key 'normal mode (kbd "V") (lambda () (interactive) (message "This mode keeps only `normal' evil-state"))))
