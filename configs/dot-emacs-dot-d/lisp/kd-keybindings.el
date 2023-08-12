@@ -4,12 +4,7 @@
 ;;
 ;;; Code:
 
-(defhydra hydra-text-scale (:timeout 4)
-  "Scale text"
-  ("j" text-scale-increase "in")
-  ("k" text-scale-decrease "out")
-  ("f" nil "finished" :exit t))
-
+;; Leader keys
 (kd/leader-keys
   "t" '(:ignore t :which-key "Toggles")
   "tt" '(consult-theme :which-key "Choose theme")
@@ -29,6 +24,14 @@
   "vg" '(magit :which-key "Magit")
   "m" '(:ignore t :which-key "Modes/Menus")
   "mg" '(guix :which-key "Guix pop-up menu"))
+
+
+(defun kd/evil-dired-setup ()
+  (evil-define-key 'normal dired-mode-map (kbd "SPC") 'dired-goto-file)
+  (evil-define-key 'normal dired-mode-map (kbd "e") 'dired-up-directory)
+  (kd/keep-only-normal-evil-state dired-mode-map))
+
+(add-hook 'dired-mode-hook #'kd/evil-dired-setup)
 
 (which-key-add-key-based-replacements
   "C-c SPC" "Application launcher"

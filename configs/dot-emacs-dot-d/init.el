@@ -11,7 +11,7 @@
     (error "Emacs v%s or higher is required" minver)))
 
 ;; Remove warnings at startup
-(setq warning-minimum-level :emergency)
+;; (setq warning-minimum-level :emergency)
 
 ;; Display startup time function
 (defun display-startup-time ()
@@ -76,6 +76,7 @@
   (kd/load-lisp-file "kd-lsp.el")         ; LSP setup
   (kd/load-lisp-file "kd-languages.el")   ; All specific languages configurations
   (kd/load-lisp-file "kd-keybindings.el") ; Keybindings with general, which-key and hydra
+
 
   ;; Messaging
   (kd/load-lisp-file "kd-telega.el")
