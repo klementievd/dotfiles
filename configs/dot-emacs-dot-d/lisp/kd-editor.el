@@ -29,14 +29,20 @@
   (evil-want-keybinding nil)
   (evil-want-C-u-scroll t)
   (evil-want-C-i-jump nil)
-  :bind (:map evil-insert-state-map
-	      ;; "C-g" == "Esc"
-	      ("C-g" . evil-normal-state)
-	      ;; "C-h" == "Backspace"
-	      ("C-h" . evil-delete-backward-char-and-join)
-	      :map evil-normal-state-map
-	      ("+" . text-scale-increase)
-	      ("-" . text-scale-decrease))
+  :bind (:map
+	 evil-normal-state-map
+	 ("K" . switch-to-prev-buffer) ; or "H"
+	 ("J" . switch-to-next-buffer) ; or "L"
+	 :map
+	 evil-insert-state-map
+	 ;; "C-g" == "Esc"
+	 ("C-g" . evil-normal-state)
+	 ;; "C-h" == "Backspace"
+	 ("C-h" . evil-delete-backward-char-and-join)
+	 :map
+	 evil-normal-state-map
+	 ("+" . text-scale-increase)
+	 ("-" . text-scale-decrease))
   :init
   (evil-mode 1)
   :config
