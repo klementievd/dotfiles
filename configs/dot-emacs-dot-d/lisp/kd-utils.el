@@ -135,6 +135,7 @@
   (define-key global-map (kbd "C-c j")
     (lambda () (interactive) (org-capture nil "jj"))))
 
+;; Use `vterm' only if you need terminal ui
 (use-package vterm
   :ensure nil
   :commands vterm
