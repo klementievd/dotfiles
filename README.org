@@ -1,0 +1,18 @@
+#+title: dotfiles
+#+author: Klementiev Dmitry
+
+* System structure
+
+*Channels:*
+- RDE (Reproducible Development Environment)
+- GNU Guix/GuixSD (The best package manager/system-distribution)
+- Nonguix/Nongnu (Repository with proprietary software)
+# - Pentuix (Pentesting software packaged for Guix)
+
+| *Window Manager* | dwl-guile |
+| *Other things*   | Emacs     |
+
+* Configuration management
+b62ba3214ed0f781e2d6015044ae8a4a1bd5c7d7
+I have a little ways to manage configurations:
+- Emacs Way (Org -> Emacs Lisp)
