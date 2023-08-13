@@ -1,0 +1,4 @@
+[submodule "channel"]
+	path = channel
+	url = https://github.com/klementievd/dotfiles
+	branch = channel
